@@ -1,0 +1,114 @@
+# Node.js & npm
+node_modules/
+npm-debug.log
+npm-debug.log*
+*.npm
+package-lock.json
+.npm
+.eslintcache
+
+# Playwright specific
+test-results/
+playwright-report/
+.auth/
+browsers/
+
+# Allure reporting
+allure-results/
+allure-report/
+history/
+
+# Compiled TypeScript
+dist/
+*.js
+!cucumber.js
+!playwright.config.js
+!playwright.config1.js
+*.js.map
+*.d.ts
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+*.iml
+.DS_Store
+Thumbs.db
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*~
+
+# Build outputs
+build/
+out/
+.next/
+
+# Logs
+logs/
+*.log
+lerna-debug.log*
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Test coverage
+.coverage
+.coverage.*
+
+# Browser downloads
+webkit/
+chromium/
+firefox/
+
+# Allure history for trend charts
+.allure/
+
+# State files
+state.json
+auth.json
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+allure-2.27.0.tgz
+
+# Storybook
+storybook-static/
+
+# Misc
+.cache/
+.parcel-cache/
+dist-ssr/
+*.egg-info/
+__pycache__/
+.pytest_cache/
