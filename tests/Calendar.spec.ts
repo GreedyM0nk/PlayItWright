@@ -1,6 +1,10 @@
-import { test, expect, Page } from "@playwright/test";
+import { test, expect } from '../utils/fixtures';
 
-test("Calendar validations", async ({ page }: { page: Page }) => {
+/**
+ * MODERNIZED: Calendar Test
+ * Updated to use new fixtures system and Web-First assertions
+ */
+test("@Calendar Calendar validations", async ({ page }) => {
   const monthNumber = "6";
   const date = "15";
   const year = "2027";
@@ -12,9 +16,12 @@ test("Calendar validations", async ({ page }: { page: Page }) => {
   await page.getByText(year).click();
   await page.locator(".react-calendar__year-view__months__month").nth(Number(monthNumber) - 1).click();
   await page.locator("//abbr[text()='" + date + "']").click();
-  const inputs = await page.locator(".react-date-picker__inputGroup input");
-  for (let index = 0; index < inputs.length; index++) {
-    const value = await inputs[index].getAttribute("value");
-    expect(value).toEqual(expectedList[index]);
-  }
+  
+  // ENGINEERED: Use evaluate() instead of loop to get all values at once
+  const inputs = page.locator(".react-date-picker__inputGroup input");
+  const values = await inputs.evaluate((elements: any) => 
+    Array.from(elements).map((el: any) => el.getAttribute("value"))
+  );
+  
+  expect(values).toEqual(expectedList);
 });

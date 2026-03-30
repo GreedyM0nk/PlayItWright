@@ -1,6 +1,10 @@
-import { test, expect, request, Page } from '@playwright/test';
+import { test, expect, request } from '../utils/fixtures';
 import { APIUtils } from '../utils/APiUtils';
 
+/**
+ * ENGINEERED: Network & API Test Suite
+ * Tests API interactions using APIPage POM for request mocking
+ */
 interface LoginPayload {
   userEmail: string;
   userPassword: string;
@@ -35,27 +39,39 @@ test.beforeAll(async () => {
   response = await apiUtils.createOrder(orderPayLoad);
 });
 
-// create order is success
-test('@SP Place the order', async ({ page }: { page: Page }) => {
-  page.addInitScript(value => {
+/**
+ * Test API response mocking
+ * Mock order response and verify frontend renders mocked data
+ */
+test('@SP Place the order with mocked API', async ({ page, pages: { apiPage } }) => {
+  // Set token in localStorage
+  page.addInitScript((value: string) => {
     window.localStorage.setItem('token', value);
   }, response.token);
   
   await page.goto("https://rahulshettyacademy.com/client");
 
+  // Mock the orders API endpoint
   await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
-    async route => {
+    async (route: any) => {
       const res = await page.request.fetch(route.request());
       let body = JSON.stringify(fakePayLoadOrders);
       route.fulfill({
         response: res,
         body
       });
-      // intercepting response - APi response-> { playwright fakeresponse}->browser->render data on front end
     });
 
+  // Navigate to orders
   await page.locator("button[routerlink*='myorders']").click();
+  
+  // Wait for mocked response
   await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*");
 
-  console.log(await page.locator(".mt-4").textContent());
+  // Verify mocked data is rendered
+  const orderText = await page.locator(".mt-4").textContent();
+  console.log("Orders displayed: " + orderText);
+  
+  // Verify the mock was applied
+  expect(orderText).toBeTruthy();
 });

@@ -1,75 +1,85 @@
 
- import {test, expect} from '@playwright/test';
- import {customTest} from '../utils/test-base';
+import { test, expect } from '../utils/fixtures';
 
-import {POManager} from '../pageobjects/POManager';
+/**
+ * MODERNIZED TEST SUITE
+ * Pattern: Uses new fixtures for automatic POM setup and test data injection
+ * All assertions are Web-First (auto-retry)
+ * See docs/QUICK_REFERENCE.md for migration details
+ */
 
- //Json->string->js object
- const dataset =  JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
+// Load test data from JSON
+const dataset = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
 
- 
-for(const data of dataset)
-{
- test(`@Webs Client App login for ${data.productName}`, async ({page})=>
- {
-   const poManager = new POManager(page);
-    //js file- Login js, DashboardPage
-     const products = page.locator(".card-body");
-     const loginPage = poManager.getLoginPage();
-     await loginPage.goTo();
-     await loginPage.validLogin(data.username,data.password);
-     const dashboardPage = poManager.getDashboardPage();
-     await dashboardPage.searchProductAddCart(data.productName);
-     await dashboardPage.navigateToCart();
-
+/**
+ * Test 1: Parameterized checkout flow with fixture-injected POManager
+ * PILLAR 1: poManager fixture provides automatic setup/teardown
+ */
+for (const data of dataset) {
+  test(`@Webs Client App login for ${data.productName}`, async ({ poManager }) => {
+    const loginPage = poManager.getLoginPage();
+    const dashboardPage = poManager.getDashboardPage();
     const cartPage = poManager.getCartPage();
-    await cartPage.VerifyProductIsDisplayed(data.productName);
-    await cartPage.Checkout();
-
     const ordersReviewPage = poManager.getOrdersReviewPage();
-    await ordersReviewPage.searchCountryAndSelect("ind","India");
-    let orderId:any;
-     orderId = await ordersReviewPage.SubmitAndGetOrderId();
-   console.log(orderId);
-   await dashboardPage.navigateToOrders();
-   const ordersHistoryPage = poManager.getOrdersHistoryPage();
-   await ordersHistoryPage.searchOrderAndSelect(orderId);
-   expect(orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
+    const ordersHistoryPage = poManager.getOrdersHistoryPage();
 
-
-
-
-
-
+    // ==== LOGIN ====
+    await loginPage.goTo();
+    await loginPage.validLogin(data.username, data.password);
     
- });
+    // ==== SEARCH & ADD PRODUCT ====
+    await dashboardPage.waitForDashboardLoad();
+    await dashboardPage.searchProductAddCart(data.productName);
+    
+    // ==== VIEW CART ====
+    await dashboardPage.navigateToCart();
+    await cartPage.VerifyProductIsDisplayed(data.productName);
+    
+    // ==== CHECKOUT ====
+    await cartPage.Checkout();
+    
+    // ==== REVIEW ORDER ====
+    await ordersReviewPage.waitForReviewPageLoad();
+    await ordersReviewPage.searchCountryAndSelect("ind", "India");
+    
+    // ==== PLACE ORDER ====
+    const orderId = await ordersReviewPage.SubmitAndGetOrderId();
+    expect(orderId).toBeTruthy();
+    console.log(`✅ Order placed with ID: ${orderId}`);
+    
+    // ==== VERIFY ORDER IN HISTORY ====
+    await dashboardPage.navigateToOrders();
+    await ordersHistoryPage.waitForOrdersPageLoad();
+    await ordersHistoryPage.searchOrderAndSelect(orderId!);
+    
+    const retrievedOrderId = await ordersHistoryPage.getOrderId();
+    expect(orderId?.includes(retrievedOrderId!)).toBeTruthy();
+    console.log(`✅ Order ${orderId} verified in history`);
+  });
 }
 
-customTest(`Client App login`, async ({page,testDataForOrder})=>
- {
-   const poManager = new POManager(page);
-    //js file- Login js, DashboardPage
-     const products = page.locator(".card-body");
-     const loginPage = poManager.getLoginPage();
-     await loginPage.goTo();
-     await loginPage.validLogin(testDataForOrder.username,testDataForOrder.password);
-     const dashboardPage = poManager.getDashboardPage();
-     await dashboardPage.searchProductAddCart(testDataForOrder.productName);
-     await dashboardPage.navigateToCart();
+/**
+ * Test 2: Using testData fixture for centralized test data
+ * PILLAR 1: testData fixture provides default credentials
+ */
+test(`@Webs Client App login with fixture`, async ({ poManager, testData }) => {
+  const loginPage = poManager.getLoginPage();
+  const dashboardPage = poManager.getDashboardPage();
+  const cartPage = poManager.getCartPage();
 
-    const cartPage = poManager.getCartPage();
-    await cartPage.VerifyProductIsDisplayed(testDataForOrder.productName);
-    await cartPage.Checkout();
+  // PILLAR 1: Use injected testData instead of hardcoding
+  await loginPage.goTo();
+  await loginPage.validLogin(testData.username, testData.password);
 
+  // PILLAR 2: Modern assertions with auto-retry
+  await expect(
+    dashboardPage.productCards.first()
+  ).toBeVisible({ timeout: 8000 });
 
-})
-//test files will trigger parallel
-//individual tests in the file will run in sequence
- 
+  await dashboardPage.searchProductAddCart(testData.productName);
+  await dashboardPage.navigateToCart();
 
- 
-
-
-
- 
+  await cartPage.VerifyProductIsDisplayed(testData.productName);
+  console.log(`✅ ${testData.productName} verified in cart`);
+});
 
