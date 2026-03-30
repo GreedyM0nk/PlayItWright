@@ -1,0 +1,10 @@
+[
+  [32m'ADIDAS ORIGINAL'[39m,
+  [32m'ZARA COAT 3'[39m,
+  [32m'iphone 13 pro'[39m,
+  [32m'Mice2.0'[39m,
+  [32m'Mice2.0'[39m,
+  [32m'Mice2.0'[39m,
+  [32m'Mice2.0'[39m,
+  [32m'qwerty'[39m
+]
