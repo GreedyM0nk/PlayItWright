@@ -12,7 +12,15 @@ const config = {
     timeout: 5000
   },
   
-  reporter: 'html',
+  /* Reporters: line for CLI output, html for detailed report, allure for Allure integration */
+  reporter: [
+    ['line'],
+    ['html'],
+    ['allure-playwright']
+  ],
+  
+  /* Allure results directory */
+  outputDir: 'allure-results',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
 

@@ -16,7 +16,9 @@ browsers/
 # Allure reporting
 allure-results/
 allure-report/
+allure-history/
 history/
+.allure/
 
 # Compiled TypeScript
 dist/
