@@ -1,0 +1,19 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Web UI controls - checkboxes and dropdowns
+📂 File: UIBasicstest.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+⚠️  302 ?random=484643330&cv=11&fst=1774897326229&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63q0v9237732300z89237596770za20gzb9237596770zd9237596770xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616986~115938465~115938468~117266400~117484252&u_w=1280&u_h=720&url=https%3A%2F%2Frahulshettyacademy.com%2FloginpagePractise%2F&label=63MoCMqSmNEbEJHe6IM-&capi=2&frm=0&tiba=LoginPage%20Practise%20%7C%20Rahul%20Shetty%20Academy&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1123139389.1774897326&ec_mode=a&_tu=CA&gcl_ctr=1~0~0&category=acrcp_v1_512&em=tv.1&fmt=8&ct_cookie_present=false&crd=CLTesQII8t-xAgit4bECCKG4sQIIscGxAgiwwbECCLHDsQIIisWxAgjCybECCLTGsQIIk9qxAgjb3LECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgj02rECCJfUsQIIyduxAgix4bECCLPhsQIIpt2xAgiw3rECCIDbsQIiAQI4AQ&cerd=CgEA&eitems=ChAI8L6ozgYQ_sGB6aSjhus1Eh0A7laofq3gdDQx-K5aXqeaJ1zXaVfBh5Bkdf9w8g&fsk=ChEI8L6ozgYQmNq_sY6ArdiRARIsADco9jyCV9m8ACAX8r1o3CWHPVwxTJuwyas3ebiUFioDC9hv4T9axAOEybAaAuNR&pscrd=IhMI8PCW5afIkwMVWcPOAB1S9QzBMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOh9odHRwczovL3JhaHVsc2hldHR5YWNhZGVteS5jb20vQldDaEVJOEw2b3pnWVEzbzZEczltcWtJM3NBUklzQUxtdGh6eC0zQVl3SXFfd19vQmx6Qy1VcXdkdTVOTjBRdDNtN0xuYmFxdXN5RGhGQkUtb1U2d3BIT0l6DAgJYggIABAAGAAgAA
+⚠️  302 collect?v=2&fmt=js&pid=8312178&time=1774897326872&li_adsId=5fff68c5-cf23-416f-adb9-0b8533e7737a&url=https%3A%2F%2Frahulshettyacademy.com%2FloginpagePractise%2F
+
+[TEST BODY COMPLETED]
+======================================================================
+✅ PASSED
+⏱️  Duration: 6538ms
+======================================================================
+

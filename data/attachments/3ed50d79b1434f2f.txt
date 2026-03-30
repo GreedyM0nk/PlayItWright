@@ -1,0 +1,70 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @QW Security test request intercept
+📂 File: NetworlTest2.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[PAGES FIXTURE] Creating PageObjectFactory
+[FACTORY] Created instance: loginPage
+[FACTORY] Created instance: dashboardPage
+[FACTORY] Created instance: cartPage
+[FACTORY] Created instance: ordersHistoryPage
+[FACTORY] Created instance: ordersReviewPage
+[FACTORY] Created instance: basePage
+[FACTORY] Created instance: popupPage
+[FACTORY] Created instance: iframePage
+[FACTORY] Created instance: calendarPage
+[FACTORY] Created instance: apiPage
+[PAGES FIXTURE] Page objects ready for use
+⚠️  301 client
+📤 [POST] login
+📥 ✅ [200] login
+📤 [POST] get-all-products
+📤 [GET] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] get-all-products
+📤 [GET] 620c7bf148767f1f1215d2ca
+📤 [GET] 620c7bf148767f1f1215d2ca
+📤 [GET] productImage_1767959265156.jpg
+📤 [GET] productImage_1767959232316.jpeg
+📤 [GET] productImage_1767959158182.jpg
+📤 [GET] productImage_1773761376341.png
+📤 [GET] productImage_1773761461305.png
+📤 [GET] productImage_1773761532891.png
+📤 [GET] productImage_1773761642345.png
+📤 [GET] productImage_1773761720052.jpeg
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] productImage_1767959265156.jpg
+📥 ✅ [200] productImage_1767959232316.jpeg
+📥 ✅ [200] productImage_1773761461305.png
+📥 ✅ [200] productImage_1773761532891.png
+📥 ✅ [200] productImage_1773761376341.png
+📥 ✅ [200] productImage_1767959158182.jpg
+📥 ✅ [200] productImage_1773761642345.png
+📥 ✅ [200] productImage_1773761720052.jpeg
+📤 [GET] 620c7bf148767f1f1215d2ca
+📤 [GET] 620c7bf148767f1f1215d2ca
+📤 [GET] 620c7bf148767f1f1215d2ca
+✅ Navigated to orders page
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+📤 [GET] get-orders-details?id=69cac2e3f86ba51a6537ccca
+📤 [GET] 620c7bf148767f1f1215d2ca
+📤 [GET] 620c7bf148767f1f1215d2ca
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+⚠️  400 get-orders-details?id=621661f884b053f6765465b6
+📥 ❌ [400] get-orders-details?id=621661f884b053f6765465b6
+📥 ✅ [200] 620c7bf148767f1f1215d2ca
+
+[TEST BODY COMPLETED]
+======================================================================
+✅ PASSED
+⏱️  Duration: 11233ms
+======================================================================
+

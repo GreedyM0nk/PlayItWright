@@ -1,0 +1,27 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Webs Client App login for ZARA COAT 3
+📂 File: ClientAppPO.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+✅ Dashboard fully loaded
+📦 Available products: ADIDAS ORIGINAL, ZARA COAT 3, iphone 13 pro, Mice2.0, Mice2.0, Mice2.0, Mice2.0, qwerty
+✅ Found product: ZARA COAT 3
+✅ ZARA COAT 3 added to cart
+✅ Navigated to cart page
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: ❌ Product "ZARA COAT 3" not found in cart
+⏱️  Duration: 14177ms
+📸 Screenshot: ./test-results/failure-1774896474153.png
+======================================================================
+
+[FIXTURE] POManager test completed

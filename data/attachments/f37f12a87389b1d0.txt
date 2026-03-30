@@ -1,0 +1,18 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Web child windows handling
+📂 File: UIBasicstest.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+Extracted domain: rahulshettyacademy.com
+
+[TEST BODY COMPLETED]
+======================================================================
+✅ PASSED
+⏱️  Duration: 10287ms
+======================================================================
+

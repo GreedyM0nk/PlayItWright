@@ -1,0 +1,26 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Webs Client App login with fixture
+📂 File: ClientAppPO.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+📦 Available products: ADIDAS ORIGINAL, ZARA COAT 3, iphone 13 pro, Mice2.0, Mice2.0, Mice2.0, Mice2.0, qwerty
+✅ Found product: ADIDAS ORIGINAL
+✅ ADIDAS ORIGINAL added to cart
+✅ Navigated to cart page
+✅ Product "ADIDAS ORIGINAL" verified in cart
+✅ ADIDAS ORIGINAL verified in cart
+
+[TEST BODY COMPLETED]
+======================================================================
+✅ PASSED
+⏱️  Duration: 14057ms
+======================================================================
+
+[FIXTURE] POManager test completed

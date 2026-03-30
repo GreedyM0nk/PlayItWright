@@ -1,0 +1,19 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: Upload download excel validation
+📂 File: upload-download.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: File not found: /Users/rahulshetty/downloads/download.xlsx
+⏱️  Duration: 3892ms
+📸 Screenshot: ./test-results/failure-1774897095049.png
+======================================================================
+

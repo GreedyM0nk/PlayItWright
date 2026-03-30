@@ -1,0 +1,34 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Checkout Purchase ADIDAS ORIGINAL
+📂 File: ClientAppPO-Modern.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: expect(locator).toBeVisible() failed
+
+Locator:  locator('.card-body').first()
+Expected: visible
+Received: hidden
+Timeout:  10000ms
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('.card-body').first()
+    9 × locator resolved to <div class="card-body" _ngcontent-aus-c34="">…</div>
+      - unexpected value "hidden"
+
+⏱️  Duration: 16114ms
+📸 Screenshot: ./test-results/failure-1774897164161.png
+======================================================================
+
+[FIXTURE] POManager test completed

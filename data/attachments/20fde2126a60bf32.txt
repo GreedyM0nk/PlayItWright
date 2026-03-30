@@ -1,0 +1,41 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Calendar Calendar validations
+📂 File: Calendar.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[PAGES FIXTURE] Creating PageObjectFactory
+[FACTORY] Created instance: loginPage
+[FACTORY] Created instance: dashboardPage
+[FACTORY] Created instance: cartPage
+[FACTORY] Created instance: ordersHistoryPage
+[FACTORY] Created instance: ordersReviewPage
+[FACTORY] Created instance: basePage
+[FACTORY] Created instance: popupPage
+[FACTORY] Created instance: iframePage
+[FACTORY] Created instance: calendarPage
+[FACTORY] Created instance: apiPage
+[PAGES FIXTURE] Page objects ready for use
+⚠️  302 collect?v=2&fmt=js&pid=8312178&time=1774896398604&li_adsId=a6ba8db3-ce39-4492-862e-2f00b7fb6cbf&url=https%3A%2F%2Frahulshettyacademy.com%2FseleniumPractise%2F%23%2Foffers
+⚠️  302 collect?v=2&fmt=js&pid=8312178&time=1774896398604&li_adsId=a6ba8db3-ce39-4492-862e-2f00b7fb6cbf&url=https%3A%2F%2Frahulshettyacademy.com%2FseleniumPractise%2F%23%2Foffers&cookiesTest=true
+⚠️  302 ?random=120481751&cv=11&fst=1774896398696&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63q0v9237732300z89237596770za20gzb9237596770zd9237596770xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938469~117484252&u_w=1280&u_h=720&url=https%3A%2F%2Frahulshettyacademy.com%2FseleniumPractise%2F&label=63MoCMqSmNEbEJHe6IM-&capi=1&frm=0&tiba=GreenKart%20-%20veg%20and%20fruits%20kart&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1134022414.1774896399&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3B99.0.0.0%7CHeadlessChrome%3B145.0.7632.6%7CChromium%3B145.0.7632.6&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&ec_mode=a&_tu=CA&gcl_ctr=1~0~0&category=acrcp_v1_512&em=tv.1&fmt=8&ct_cookie_present=false&crd=CLTesQII8t-xAgit4bECCKG4sQIIscGxAgiwwbECCLHDsQIIisWxAgjCybECCLTGsQIIk9qxAgjb3LECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgj02rECCJfUsQIIyduxAgix4bECCLPhsQIIpt2xAgiw3rECCIDbsQJKGXRyaWdnZXI9bmF2aWdhdGlvbi1zb3VyY2VaAwoBAWIDCgED&cerd=CgEA&eitems=ChAI8L6ozgYQ_sGB6aSjhus1Eh0A7laofrbdsOfcL39Is_rT1UvnQpb72SPh6gZYPw&fsk=ChEI8L6ozgYQmNq_sY6ArdiRARIsADco9jy2i79LSgLLaGVbY305fTKTCw05WZsKzW-TJTCWTNYdC_n4uilBnGsaAmN-&pscrd=IhMInNnvqqTIkwMVHOjOAB2ISAqqMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOh9odHRwczovL3JhaHVsc2hldHR5YWNhZGVteS5jb20vQlhDaEVJOEw2b3pnWVEzbzZEczltcWtJM3NBUkl0QUxtdGh6eXRwS1p0NHh2ZEh4c1FvazhwV3ZzYWxhbk1FQ202UTNtTS1XcVVuWWdqNmpQQTZaSk9IVFhIegwICWIICAAQABgAIAA
+⚠️  302 li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D8312178%26time%3D1774896398604%26li_adsId%3Da6ba8db3-ce39-4492-862e-2f00b7fb6cbf%26url%3Dhttps%253A%252F%252Frahulshettyacademy.com%252FseleniumPractise%252F%2523%252Foffers%26cookiesTest%3Dtrue%26liSync%3Dtrue
+📅 Selecting date: 6/15/2027
+✅ Calendar opened
+✅ Decade/year view opened
+✅ Year selected: 2027
+✅ Month selected: 6
+✅ Day selected: 15
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: Expected 3 date inputs (month/date/year), but found 4
+⏱️  Duration: 2654ms
+📸 Screenshot: ./test-results/failure-1774896400385.png
+======================================================================
+
