@@ -1,0 +1,42 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @QA Engineered - authenticated session complete checkout flow
+📂 File: WebAPIPart2-Engineered.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+
+[AUTH FIXTURE] Creating authenticated context...
+[AUTH FIXTURE] Navigating to login page
+[AUTH FIXTURE] Entering credentials
+[AUTH FIXTURE] Clicking login button
+[AUTH FIXTURE] Waiting for dashboard to load
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: expect(locator).toBeVisible() failed
+
+Locator: locator('.card-body')
+Expected: visible
+Error: strict mode violation: locator('.card-body') resolved to 8 elements:
+    1) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('ADIDAS ORIGINAL$ 11500 View')
+    2) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('ZARA COAT 3$ 11500 View Add')
+    3) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('iphone 13 pro$ 55000 View Add')
+    4) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('Mice2.0$ 1150 View Add To Cart').first()
+    5) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('Mice2.0$ 1150 View Add To Cart').nth(1)
+    6) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('Mice2.0$ 1150 View Add To Cart').nth(2)
+    7) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('Mice2.0$ 1150 View Add To Cart').nth(3)
+    8) <div class="card-body" _ngcontent-dfg-c34="">…</div> aka getByText('qwerty$ 11500 View Add To Cart')
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('.card-body')
+
+⏱️  Duration: 8242ms
+📸 Screenshot: ./test-results/failure-1774896893136.png
+======================================================================
+

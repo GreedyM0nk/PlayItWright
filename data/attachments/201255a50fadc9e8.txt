@@ -1,0 +1,35 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Webst Client App login
+📂 File: ClientApp.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+✅ Logged in as anshika@gmail.com
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: expect(locator).toBeVisible() failed
+
+Locator:  locator('.card-body').first()
+Expected: visible
+Received: hidden
+Timeout:  10000ms
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('.card-body').first()
+    9 × locator resolved to <div class="card-body" _ngcontent-bgi-c34="">…</div>
+      - unexpected value "hidden"
+
+⏱️  Duration: 16218ms
+📸 Screenshot: ./test-results/failure-1774897094094.png
+======================================================================
+
+[FIXTURE] POManager test completed

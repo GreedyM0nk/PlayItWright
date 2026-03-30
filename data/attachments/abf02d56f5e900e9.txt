@@ -1,0 +1,197 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - generic [ref=e7]:
+        - link "Automation Automation Practice":
+          - /url: ""
+          - generic [ref=e8]:
+            - heading "Automation" [level=3] [ref=e9]
+            - paragraph [ref=e10]: Automation Practice
+      - generic [ref=e12] [cursor=pointer]: 
+      - link "Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot" [ref=e13] [cursor=pointer]:
+        - /url: http://qasummit.org/
+      - list [ref=e14]:
+        - listitem [ref=e15] [cursor=pointer]:
+          - button " HOME" [ref=e16]:
+            - generic [ref=e17]: 
+            - text: HOME
+        - listitem
+        - listitem [ref=e18] [cursor=pointer]:
+          - button " ORDERS" [ref=e19]:
+            - generic [ref=e20]: 
+            - text: ORDERS
+        - listitem [ref=e21] [cursor=pointer]:
+          - button " Cart" [ref=e22]:
+            - generic [ref=e23]: 
+            - text: Cart
+        - listitem [ref=e24] [cursor=pointer]:
+          - button "Sign Out" [ref=e25]:
+            - generic [ref=e26]: 
+            - text: Sign Out
+    - button "Filters " [expanded] [ref=e28] [cursor=pointer]:
+      - text: Filters
+      - generic [ref=e29]: 
+    - generic [ref=e30]:
+      - paragraph [ref=e31]: Home | Search
+      - heading "Filters" [level=4] [ref=e33]
+      - generic [ref=e34]:
+        - textbox "search" [ref=e36]
+        - generic [ref=e37]:
+          - heading "Price Range" [level=6] [ref=e38]
+          - generic [ref=e39]:
+            - textbox "Min Price" [ref=e41]
+            - textbox "Max Price" [ref=e43]
+        - generic [ref=e44]:
+          - heading "Categories" [level=6] [ref=e45]
+          - generic [ref=e47]: 
+          - generic [ref=e48]:
+            - checkbox [ref=e49]
+            - generic [ref=e50]: fashion
+          - generic [ref=e51]:
+            - checkbox [ref=e52]
+            - generic [ref=e53]: electronics
+          - generic [ref=e54]:
+            - checkbox [ref=e55]
+            - generic [ref=e56]: household
+        - generic [ref=e57]:
+          - heading "Sub Categories" [level=6] [ref=e58]
+          - generic [ref=e60]: 
+          - generic [ref=e61]:
+            - checkbox [ref=e62]
+            - generic [ref=e63]: t-shirts
+          - generic [ref=e64]:
+            - checkbox [ref=e65]
+            - generic [ref=e66]: shirts
+          - generic [ref=e67]:
+            - checkbox [ref=e68]
+            - generic [ref=e69]: shoes
+          - generic [ref=e70]:
+            - checkbox [ref=e71]
+            - generic [ref=e72]: mobiles
+          - generic [ref=e73]:
+            - checkbox [ref=e74]
+            - generic [ref=e75]: laptops
+        - generic [ref=e76]:
+          - heading "Search For" [level=6] [ref=e77]
+          - generic [ref=e79]: 
+          - generic [ref=e80]:
+            - checkbox [ref=e81]
+            - generic [ref=e82]: men
+          - generic [ref=e83]:
+            - checkbox [ref=e84]
+            - generic [ref=e85]: women
+    - text:   
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: Showing 8 results |
+          - generic [ref=e90]: User can only see maximum 9 products on a page
+        - generic [ref=e91]:
+          - generic [ref=e93]:
+            - img [ref=e94]
+            - generic [ref=e95]:
+              - heading "ADIDAS ORIGINAL" [level=5] [ref=e96]
+              - generic [ref=e98]: $ 11500
+              - button "View" [ref=e99] [cursor=pointer]:
+                - generic [ref=e100]: 
+                - text: View
+              - button " Add To Cart" [ref=e101] [cursor=pointer]:
+                - generic [ref=e102]: 
+                - text: Add To Cart
+          - generic [ref=e104]:
+            - img [ref=e105]
+            - generic [ref=e106]:
+              - heading "ZARA COAT 3" [level=5] [ref=e107]
+              - generic [ref=e109]: $ 11500
+              - button "View" [ref=e110] [cursor=pointer]:
+                - generic [ref=e111]: 
+                - text: View
+              - button " Add To Cart" [ref=e112] [cursor=pointer]:
+                - generic [ref=e113]: 
+                - text: Add To Cart
+          - generic [ref=e115]:
+            - img [ref=e116]
+            - generic [ref=e117]:
+              - heading "iphone 13 pro" [level=5] [ref=e118]
+              - generic [ref=e120]: $ 55000
+              - button "View" [ref=e121] [cursor=pointer]:
+                - generic [ref=e122]: 
+                - text: View
+              - button " Add To Cart" [ref=e123] [cursor=pointer]:
+                - generic [ref=e124]: 
+                - text: Add To Cart
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e128]:
+              - heading "Mice2.0" [level=5] [ref=e129]
+              - generic [ref=e131]: $ 1150
+              - button "View" [ref=e132] [cursor=pointer]:
+                - generic [ref=e133]: 
+                - text: View
+              - button " Add To Cart" [ref=e134] [cursor=pointer]:
+                - generic [ref=e135]: 
+                - text: Add To Cart
+          - generic [ref=e137]:
+            - img [ref=e138]
+            - generic [ref=e139]:
+              - heading "Mice2.0" [level=5] [ref=e140]
+              - generic [ref=e142]: $ 1150
+              - button "View" [ref=e143] [cursor=pointer]:
+                - generic [ref=e144]: 
+                - text: View
+              - button " Add To Cart" [ref=e145] [cursor=pointer]:
+                - generic [ref=e146]: 
+                - text: Add To Cart
+          - generic [ref=e148]:
+            - img [ref=e149]
+            - generic [ref=e150]:
+              - heading "Mice2.0" [level=5] [ref=e151]
+              - generic [ref=e153]: $ 1150
+              - button "View" [ref=e154] [cursor=pointer]:
+                - generic [ref=e155]: 
+                - text: View
+              - button " Add To Cart" [ref=e156] [cursor=pointer]:
+                - generic [ref=e157]: 
+                - text: Add To Cart
+          - generic [ref=e159]:
+            - img [ref=e160]
+            - generic [ref=e161]:
+              - heading "Mice2.0" [level=5] [ref=e162]
+              - generic [ref=e164]: $ 1150
+              - button "View" [ref=e165] [cursor=pointer]:
+                - generic [ref=e166]: 
+                - text: View
+              - button " Add To Cart" [ref=e167] [cursor=pointer]:
+                - generic [ref=e168]: 
+                - text: Add To Cart
+          - generic [ref=e170]:
+            - img [ref=e171]
+            - generic [ref=e172]:
+              - heading "qwerty" [level=5] [ref=e173]
+              - generic [ref=e175]: $ 11500
+              - button "View" [ref=e176] [cursor=pointer]:
+                - generic [ref=e177]: 
+                - text: View
+              - button " Add To Cart" [ref=e178] [cursor=pointer]:
+                - generic [ref=e179]: 
+                - text: Add To Cart
+      - list "Pagination" [ref=e184]:
+        - listitem [ref=e185]:
+          - text: «
+          - generic [ref=e186]:
+            - text: Previous
+            - generic [ref=e187]: page
+        - listitem [ref=e188]:
+          - generic [ref=e189]: You're on page
+          - text: "1"
+        - listitem [ref=e190]:
+          - generic [ref=e191]:
+            - text: Next
+            - generic [ref=e192]: page
+          - text: »
+    - generic [ref=e193]: Design and Developed By - Kunal Sharma
+  - generic "Login Successfully" [ref=e195]
+```

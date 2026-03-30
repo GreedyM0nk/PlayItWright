@@ -1,0 +1,6 @@
+
+[AUTH FIXTURE] Creating authenticated context...
+[AUTH FIXTURE] Navigating to login page
+[AUTH FIXTURE] Entering credentials
+[AUTH FIXTURE] Clicking login button
+[AUTH FIXTURE] Waiting for dashboard to load

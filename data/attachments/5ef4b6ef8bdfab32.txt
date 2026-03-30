@@ -1,0 +1,39 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Calendar Calendar validations
+📂 File: Calendar.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[PAGES FIXTURE] Creating PageObjectFactory
+[FACTORY] Created instance: loginPage
+[FACTORY] Created instance: dashboardPage
+[FACTORY] Created instance: cartPage
+[FACTORY] Created instance: ordersHistoryPage
+[FACTORY] Created instance: ordersReviewPage
+[FACTORY] Created instance: basePage
+[FACTORY] Created instance: popupPage
+[FACTORY] Created instance: iframePage
+[FACTORY] Created instance: calendarPage
+[FACTORY] Created instance: apiPage
+[PAGES FIXTURE] Page objects ready for use
+📅 Selecting date: 6/15/2027
+⚠️  302 collect?v=2&fmt=js&pid=8312178&time=1774897074777&li_adsId=1ff416b7-e631-4983-ab89-2ee7ec3ff528&url=https%3A%2F%2Frahulshettyacademy.com%2FseleniumPractise%2F%23%2Foffers
+⚠️  302 ?random=344533086&cv=11&fst=1774897074406&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63q0v9237732300z89237596770za20gzb9237596770zd9237596770xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115616985~115938466~115938469~117484252&u_w=1280&u_h=720&url=https%3A%2F%2Frahulshettyacademy.com%2FseleniumPractise%2F&label=63MoCMqSmNEbEJHe6IM-&capi=2&frm=0&tiba=GreenKart%20-%20veg%20and%20fruits%20kart&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=219572722.1774897074&ec_mode=a&_tu=CA&gcl_ctr=1~0~0&category=acrcp_v1_512&em=tv.1&fmt=8&ct_cookie_present=false&crd=CLTesQII8t-xAgit4bECCKG4sQIIscGxAgiwwbECCLHDsQIIisWxAgjCybECCLTGsQIIk9qxAgjb3LECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgj02rECCJfUsQIIyduxAgix4bECCLPhsQIIpt2xAgiw3rECCIDbsQIiAQI4AQ&cerd=CgEA&eitems=ChAI8L6ozgYQ_sGB6aSjhus1Eh0A7laofmx4vp_nYpnBPyNHVyuwKOTxVaXKuWnAGA&fsk=ChEI8L6ozgYQmNq_sY6ArdiRARIsADco9jw9FjC5Vo_1MSjAYOJjipNSZyCN8NuQVIKRzunl5lAX6P1iHO8IYCcaAsYe&pscrd=IhMI966L7abIkwMVK1FHAR3LTDjaMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOh9odHRwczovL3JhaHVsc2hldHR5YWNhZGVteS5jb20vQldDaEVJOEw2b3pnWVEzbzZEczltcWtJM3NBUklzQUxtdGh6em1ncjg4aFR2OEZoLWhNNmtxUUhlaDNFT3ljVXNIMWN3RGlUd0NFNUx1d2Q0S0RyRV9BVDB6DAgJYggIABAAGAAgAA
+✅ Calendar opened
+✅ Decade/year view opened
+✅ Year selected: 2027
+✅ Month selected: 6
+✅ Day selected: 15
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: Expected 3 date inputs (month/date/year), but found 4
+⏱️  Duration: 5566ms
+📸 Screenshot: ./test-results/failure-1774897077604.png
+======================================================================
+

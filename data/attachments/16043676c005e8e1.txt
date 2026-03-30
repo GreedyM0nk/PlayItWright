@@ -1,0 +1,43 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Checkout Purchase ADIDAS ORIGINAL
+📂 File: ClientAppPO-Modern.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+📦 Available products: ADIDAS ORIGINAL, ZARA COAT 3, iphone 13 pro, Mice2.0, Mice2.0, Mice2.0, Mice2.0, qwerty
+✅ Found product: ADIDAS ORIGINAL
+✅ ADIDAS ORIGINAL added to cart
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: expect(locator).toBeEnabled() failed
+
+Locator: locator('button:has-text("Cart")')
+Expected: enabled
+Error: strict mode violation: locator('button:has-text("Cart")') resolved to 9 elements:
+    1) <button tabindex="0" _ngcontent-ubx-c33="" class="btn btn-custom" routerlink="/dashboard/cart">…</button> aka getByRole('button', { name: '   Cart' })
+    2) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).first()
+    3) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).nth(1)
+    4) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).nth(2)
+    5) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).nth(3)
+    6) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).nth(4)
+    7) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).nth(5)
+    8) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka locator('div:nth-child(7) > .card > .card-body > .btn.w-10')
+    9) <button _ngcontent-ubx-c34="" class="btn w-10 rounded">…</button> aka locator('div:nth-child(8) > .card > .card-body > .btn.w-10')
+
+Call log:
+  - Expect "toBeEnabled" with timeout 10000ms
+  - waiting for locator('button:has-text("Cart")')
+
+⏱️  Duration: 9628ms
+📸 Screenshot: ./test-results/failure-1774896754712.png
+======================================================================
+
+[FIXTURE] POManager test completed

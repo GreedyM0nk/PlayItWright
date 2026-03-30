@@ -1,0 +1,26 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Login Failure - Invalid Credentials
+📂 File: ClientAppPO-Modern.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+⚠️  400 login
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: TimeoutError: page.waitForURL: Timeout 10000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until "load"
+============================================================
+⏱️  Duration: 16182ms
+📸 Screenshot: ./test-results/failure-1774897214308.png
+======================================================================
+
+[FIXTURE] POManager test completed

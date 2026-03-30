@@ -1,0 +1,48 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - link "Free Access to InterviewQues/ResumeAssistance/Material" [ref=e3] [cursor=pointer]:
+      - /url: https://rahulshettyacademy.com/documents-request
+    - link "Join Rahul Shetty for a QA Career Meetup in CHENNAI - Book Your Spot" [ref=e4] [cursor=pointer]:
+      - /url: http://qasummit.org/
+  - generic [ref=e5]:
+    - heading [level=3] [ref=e6]:
+      - img [ref=e8]
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - strong [ref=e16]: Incorrect
+        - text: username/password.
+      - generic [ref=e17]:
+        - generic [ref=e18]: "Username:"
+        - textbox "Username:" [ref=e19]: rahulshettyacademy
+      - generic [ref=e20]:
+        - generic [ref=e21]: "Password:"
+        - textbox "Password:" [ref=e22]: learning
+      - generic [ref=e24]:
+        - generic [ref=e25] [cursor=pointer]:
+          - text: Admin
+          - radio "Admin" [checked] [ref=e26]
+        - generic [ref=e28] [cursor=pointer]:
+          - text: User
+          - radio "User" [ref=e29]
+      - combobox [ref=e32]:
+        - option "Student" [selected]
+        - option "Teacher"
+        - option "Consultant"
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - checkbox "I Agree to the terms and conditions" [ref=e36]
+          - generic [ref=e37]:
+            - text: I Agree to the
+            - link "terms and conditions" [ref=e38] [cursor=pointer]:
+              - /url: "#"
+        - button "Signing .." [active] [ref=e39] [cursor=pointer]
+      - paragraph [ref=e41]:
+        - text: (username is
+        - generic [ref=e42]: rahulshettyacademy
+        - text: and Password is
+        - generic [ref=e43]: Learning@830$3mK2
+        - text: )
+```

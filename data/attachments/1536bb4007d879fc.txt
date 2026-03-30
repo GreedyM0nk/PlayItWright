@@ -1,0 +1,16 @@
+[PAGES FIXTURE] Creating PageObjectFactory
+[FACTORY] Created instance: loginPage
+[FACTORY] Created instance: dashboardPage
+[FACTORY] Created instance: cartPage
+[FACTORY] Created instance: ordersHistoryPage
+[FACTORY] Created instance: ordersReviewPage
+[FACTORY] Created instance: basePage
+[FACTORY] Created instance: popupPage
+[FACTORY] Created instance: iframePage
+[FACTORY] Created instance: calendarPage
+[FACTORY] Created instance: apiPage
+[PAGES FIXTURE] Page objects ready for use
+📤 [GET] course
+📥 ❌ [500] course
+📤 [GET] aframe
+📥 ✅ [200] aframe

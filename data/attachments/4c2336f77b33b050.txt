@@ -1,0 +1,36 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: Screenshot & Visual comparison
+📂 File: MoreValidations.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[PAGES FIXTURE] Creating PageObjectFactory
+[FACTORY] Created instance: loginPage
+[FACTORY] Created instance: dashboardPage
+[FACTORY] Created instance: cartPage
+[FACTORY] Created instance: ordersHistoryPage
+[FACTORY] Created instance: ordersReviewPage
+[FACTORY] Created instance: basePage
+[FACTORY] Created instance: popupPage
+[FACTORY] Created instance: iframePage
+[FACTORY] Created instance: calendarPage
+[FACTORY] Created instance: apiPage
+[PAGES FIXTURE] Page objects ready for use
+⚠️  302 collect?v=2&fmt=js&pid=8312178&time=1774897200268&li_adsId=1eeda5dc-ecb6-47af-b64a-bd150b864c48&url=https%3A%2F%2Frahulshettyacademy.com%2FAutomationPractice%2F
+⚠️  302 ?random=336438520&cv=11&fst=1774897200183&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be63q0v9237732300z89237596770za20gzb9237596770zd9237596770xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=0~115938466~115938469~117484252&u_w=1280&u_h=720&url=https%3A%2F%2Frahulshettyacademy.com%2FAutomationPractice%2F&label=63MoCMqSmNEbEJHe6IM-&capi=2&frm=0&tiba=Practice%20Page&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1153859087.1774897200&ec_mode=a&_tu=CA&gcl_ctr=1~0~0&category=acrcp_v1_512&em=tv.1&fmt=8&ct_cookie_present=false&crd=CLTesQII8t-xAgit4bECCKG4sQIIscGxAgiwwbECCLHDsQIIisWxAgjCybECCLTGsQIIk9qxAgjb3LECCIfbsQII08WxAgjrzLECCO3OsQII1c-xAgj02rECCJfUsQIIyduxAgix4bECCLPhsQIIpt2xAgiw3rECCIDbsQIiAQI4AQ&cerd=CgEA&eitems=ChAI8L6ozgYQ_sGB6aSjhus1Eh0A7laoftLSswEjg35CEM7oOLiqeetSbnI9xpzwVA&fsk=ChEI8L6ozgYQmNq_sY6ArdiRARIsADco9jzX445m0kM9haeMONz3rPgKZxGPyS0L96z-rom_rvjWO0V3Fhh_kFYaAndA&pscrd=IhMIio-KqafIkwMVHuXOAB3ihQ-GMgwIA2IICAAQABgAIAAyDAgEYggIABAAGAAgADIMCAdiCAgAEAAYACAAMgwICGIICAAQABgAIAAyDAgJYggIABAAGAAgADIMCApiCAgAEAAYACAAMgwIAmIICAAQABgAIAAyDAgLYggIABAAGAAgADIMCBViCAgAEAAYACAAMgwIH2IICAAQABgAIAAyDAgTYggIABAAGAAgADIMCBJiCAgAEAAYACAAOh9odHRwczovL3JhaHVsc2hldHR5YWNhZGVteS5jb20vQlhDaEVJOEw2b3pnWVEzbzZEczltcWtJM3NBUkl0QUxtdGh6ejRsZlc0bHdIZW15b2ZsU21SNDhtcHRVOC1IRUdCTDFuVENMUThkMWFTQ0hEYlpJblNhdjBUegwICWIICAAQABgAIAA
+📤 [GET] course
+⚠️  500 course
+📥 ❌ [500] course
+📤 [GET] aframe
+📥 ✅ [200] aframe
+
+[TEST BODY COMPLETED]
+======================================================================
+✅ PASSED
+⏱️  Duration: 15758ms
+======================================================================
+

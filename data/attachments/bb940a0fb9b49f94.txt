@@ -1,0 +1,29 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Webst Client App login
+📂 File: ClientApp.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+✅ Logged in as anshika@gmail.com
+✅ Dashboard fully loaded
+📦 Available products: ADIDAS ORIGINAL, ZARA COAT 3, iphone 13 pro, Mice2.0, Mice2.0, Mice2.0, Mice2.0, qwerty
+✅ Found product: ZARA COAT 3
+✅ ZARA COAT 3 added to cart
+✅ Added ZARA COAT 3 to cart
+✅ Navigated to cart page
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: ❌ Product "ZARA COAT 3" not found in cart
+⏱️  Duration: 19771ms
+📸 Screenshot: ./test-results/failure-1774896762839.png
+======================================================================
+
+[FIXTURE] POManager test completed

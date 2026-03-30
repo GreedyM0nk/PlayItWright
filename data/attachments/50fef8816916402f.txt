@@ -1,0 +1,37 @@
+
+======================================================================
+🧪 TEST START
+📝 Title: @Checkout Purchase ADIDAS ORIGINAL
+📂 File: ClientAppPO-Modern.spec.ts
+🏃 Status: Running
+======================================================================
+📐 Viewport: 1280x720
+
+[TEST BODY RUNNING...]
+[FIXTURE] Initializing POManager for test (backward compatibility)
+⚠️  301 client
+📦 Available products: ADIDAS ORIGINAL, ZARA COAT 3, iphone 13 pro, Mice2.0, Mice2.0, Mice2.0, Mice2.0, qwerty
+✅ Found product: ADIDAS ORIGINAL
+✅ ADIDAS ORIGINAL added to cart
+
+[TEST BODY COMPLETED]
+======================================================================
+❌ FAILED
+📋 Error: Error: expect(locator).toBeEnabled() failed
+
+Locator: locator('button:has-text("Cart")')
+Expected: enabled
+Error: strict mode violation: locator('button:has-text("Cart")') resolved to 9 elements:
+    1) <button tabindex="0" _ngcontent-kvr-c33="" class="btn btn-custom" routerlink="/dashboard/cart">…</button> aka getByRole('button', { name: '   Cart' })
+    2) <button _ngcontent-kvr-c34="" class="btn w-10 rounded">…</button> aka getByRole('button', { name: ' Add To Cart' }).first()
+    ...
+
+Call log:
+  - Expect "toBeEnabled" with timeout 10000ms
+  - waiting for locator('button:has-text("Cart")')
+
+⏱️  Duration: 6883ms
+📸 Screenshot: ./test-results/failure-1774896536403.png
+======================================================================
+
+[FIXTURE] POManager test completed
