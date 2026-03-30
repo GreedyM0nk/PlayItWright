@@ -31,14 +31,12 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'PlayWrightAutomation/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Install Dependencies
-        working-directory: PlayWrightAutomation
         run: npm ci
 
       - name: Install Playwright Browsers
-        working-directory: PlayWrightAutomation
         run: npx playwright install --with-deps
 
       # Install Allure CLI for report generation
@@ -51,13 +49,11 @@ jobs:
 
       # Run Smoke/Critical Tests (if available)
       - name: Run Marked Tests
-        working-directory: PlayWrightAutomation
         run: npx playwright test
         continue-on-error: true
 
       - name: Check Allure Results
         if: always()
-        working-directory: PlayWrightAutomation
         run: |
           echo "=== Allure Results Check ==="
           RESULT_COUNT=$(find allure-results -name "*.json" 2>/dev/null | wc -l)
@@ -75,7 +71,6 @@ jobs:
 
       - name: Copy History Into Results
         if: always()
-        working-directory: PlayWrightAutomation
         run: |
           mkdir -p allure-results/history
           if [ -d "../gh-pages-history/history" ]; then
@@ -90,15 +85,14 @@ jobs:
       # Generate report using Allure CLI
       - name: Generate Allure Report
         if: always()
-        working-directory: PlayWrightAutomation
         run: |
-          allure generate allure-results --clean -o ../allure-report
+          allure generate allure-results --clean -o allure-report
           echo "Report generated:"
-          ls -la ../allure-report/
+          ls -la allure-report/
 
       - name: Deploy Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: always()
+        if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages

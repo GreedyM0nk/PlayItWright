@@ -33,28 +33,24 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'PlayWrightAutomation/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       # 3. Install Dependencies
       - name: Install Dependencies
-        working-directory: PlayWrightAutomation
         run: npm ci
 
       # 4. IMPORTANT: Install Playwright Browsers and Dependencies
       - name: Install Playwright Browsers with Dependencies
-        working-directory: PlayWrightAutomation
         run: npx playwright install --with-deps
 
       # 5. Run Playwright Tests with Allure Reporter
       - name: Run Playwright Tests
-        working-directory: PlayWrightAutomation
         run: npx playwright test --reporter=line,allure-playwright
         continue-on-error: true
 
       # 6. Check Allure Results
       - name: Check Allure Results
         if: always()
-        working-directory: PlayWrightAutomation
         run: |
           echo "=== Allure Results Status ==="
           RESULT_COUNT=$(find allure-results -name "*.json" 2>/dev/null | wc -l)
@@ -72,7 +68,6 @@ jobs:
 
       - name: Preserve History for Trends
         if: always()
-        working-directory: PlayWrightAutomation
         run: |
           mkdir -p allure-results/history
           if [ -d "../gh-pages-history/history" ]; then
@@ -87,13 +82,13 @@ jobs:
         if: always()
         uses: simple-elf/allure-report-action@master
         with:
-          allure_results: PlayWrightAutomation/allure-results
+          allure_results: allure-results
           allure_history: allure-history
           keep_reports: 20
 
       # 9. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        if: always()
+        if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
