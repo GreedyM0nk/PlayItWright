@@ -73,31 +73,52 @@ PlayItWright/
 ├── docs/
 │   ├── ALLURE_SETUP.md                  # Comprehensive Allure guide
 │   ├── TESTING_GUIDE.md                 # Testing documentation
+│   ├── SETUP_SUMMARY.md                 # Setup instructions
 │   └── TROUBLESHOOTING.md               # Common issues & solutions
-├── PlayWrightAutomation/                # Main test automation folder
-│   ├── allure-results/                  # Generated - Allure test data
-│   ├── allure-report/                   # Generated - Allure HTML report
-│   ├── test-results/                    # Generated - Playwright results
-│   ├── playwright-report/               # Generated - Playwright HTML report
-│   ├── tests/                           # Test specifications
-│   │   ├── *.spec.js                    # Test files
-│   │   └── MoreValidations.spec.js      # Example test
-│   ├── pageobjects/                     # Page Object Model (JavaScript)
-│   ├── pageobjects_ts/                  # Page Object Model (TypeScript)
-│   ├── features/                        # BDD feature files (Cucumber)
-│   ├── utils/                           # JavaScript utility functions
-│   ├── utils_ts/                        # TypeScript utilities
-│   ├── playwright.config.js             # 🔧 Main Playwright config
-│   ├── playwright.config1.js            # Alternative config (Safari)
-│   ├── cucumber.js                      # Cucumber configuration
-│   ├── package.json                     # Dependencies & npm scripts
-│   ├── tsconfig.json                    # TypeScript configuration
-│   └── .gitignore                       # Git ignore rules
-├── .gitignore                           # Root-level git ignore
-├── package.json                         # Root dependencies
+├── tests/                               # 📝 Test specifications
+│   ├── *.spec.js                        # Playwright test files
+│   ├── *.spec.ts                        # TypeScript test files
+│   └── MoreValidations.spec.js          # Example test
+├── pageobjects/                         # 📦 Page Object Model (JavaScript)
+│   ├── LoginPage.js
+│   ├── CartPage.js
+│   ├── DashboardPage.js
+│   └── POManager.js
+├── pageobjects_ts/                      # 📦 Page Object Model (TypeScript)
+│   ├── LoginPage.ts
+│   ├── CartPage.ts
+│   ├── DashboardPage.ts
+│   └── POManager.ts
+├── features/                            # 🏷️ BDD Feature files (Cucumber)
+│   ├── greeting.feature
+│   ├── ErrorValidation.feature
+│   └── step_definitions/
+│       ├── steps.js
+│       └── steps.ts
+├── utils/                               # 🔧 Utility functions (JavaScript)
+│   ├── APiUtils.js
+│   ├── test-base.js
+│   └── placeorderTestData.json
+├── utils_ts/                            # 🔧 Utility functions (TypeScript)
+│   ├── APiUtils.ts
+│   ├── test-base.ts
+│   └── placeorderTestData.json
+├── .github/                             # GitHub configuration
+├── .gitignore                           # Git ignore rules
+├── cucumber.js                          # Cucumber configuration
+├── playwright.config.js                 # 🔧 Main Playwright configuration
+├── playwright.config1.js                # Alternative config (Safari/Safari-specific)
+├── tsconfig.json                        # TypeScript configuration
+├── package.json                         # Dependencies & npm scripts
 ├── package-lock.json                    # Dependency lock file
 └── README.md                            # 👈 You are here
 
+**Generated directories (not in git):**
+- `allure-results/` - Allure test data
+- `allure-report/` - Allure HTML reports
+- `test-results/` - Playwright test results
+- `playwright-report/` - Playwright HTML reports
+- `node_modules/` - Project dependencies
 ```
 
 ---
@@ -115,7 +136,7 @@ PlayItWright/
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd PlayItWright/PlayWrightAutomation
+cd PlayItWright
 
 # Install dependencies
 npm install
@@ -127,29 +148,65 @@ npx playwright install --with-deps
 ### 2️⃣ Run Tests
 
 ```bash
-# Run all tests
+# Run all tests (basic output)
 npm run regression
 
-# With Allure reporting
+# Run all tests with Allure reporting
 npm run test:allure
 
-# Specific tags
-npm run webTests    # Run @Web tagged tests
-npm run APITests    # Run @API tagged tests
+# Run specific test suites by tag
+npm run webTests    # Tests tagged with @Web
+npm run APITests    # Tests tagged with @API
 
-# Debug mode
+# Run with specific browser
+npx playwright test --project=chromium
+npx playwright test --project=firefox
+npx playwright test --project=webkit
+
+# Debug mode (interactive debugging)
 npx playwright test --debug
 
-# UI mode (interactive)
+# UI mode (visual test runner)
 npx playwright test --ui
+
+# Run specific test file
+npx playwright test tests/ClientApp.spec.js
+
+# Run tests matching pattern
+npx playwright test -g "login"
+
+# Headed mode (see browser)
+npx playwright test --headed
 ```
 
-### 3️⃣ View Report
+### 3️⃣ View Allure Reportswith default reporters |
+| `webTests` | `npx playwright test --grep @Web` | Tests tagged with @Web |
+| `APITests` | `npx playwright test --grep @API` | Tests tagged with @API |
+| `test:allure` | `npx playwright test --reporter=line,allure-playwright` | Run with Allure + console reporting |
+| `SafariNewConfig` | `npx playwright test --config playwright.config1.js --project=safari` | Run with Safari configuration
 
-```bash
-# Generate and view Allure report locally
+# Generate and open Allure report
 allure generate allure-results --clean -o allure-report
 allure open allure-report
+```
+
+**Alternative: View Allure Report in Browser**
+```bash
+# Generate report
+allure generate allure-results --clean -o allure-report
+
+# Serve locally (if allure is installed globally)
+allure serve allure-results
+
+# Or open the HTML directly
+open allure-report/index.html
+```
+
+### 4️⃣ View Playwright Reports
+
+```bash
+# After running tests
+npx playwright show-report
 ```
 
 ---
