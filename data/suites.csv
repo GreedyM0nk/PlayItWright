@@ -1,2 +1,2 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2923","Calendar validations","","Mon Mar 30 09:21:30 UTC 2026","passed","Mon Mar 30 09:21:33 UTC 2026","","Calendar.spec.js","",""
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Mar 30 09:21:47 UTC 2026","Mon Mar 30 09:21:50 UTC 2026","2845","","Calendar.spec.js","","","","Calendar validations",""
