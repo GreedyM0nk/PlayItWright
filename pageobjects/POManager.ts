@@ -1,55 +1,44 @@
-
-import {LoginPage} from './LoginPage';
-import {DashboardPage} from './DashboardPage';
+import { LoginPage } from './LoginPage';
+import { DashboardPage } from './DashboardPage';
 import { OrdersHistoryPage } from './OrdersHistoryPage';
 import { OrdersReviewPage } from './OrdersReviewPage';
 import { CartPage } from './CartPage';
-import {Page} from '@playwright/test';
+import { Page } from '@playwright/test';
 
-export class POManager
-{
-    loginPage: LoginPage;
-    dashboardPage: DashboardPage;
-    ordersHistoryPage : OrdersHistoryPage;
-    ordersReviewPage : OrdersReviewPage;
-    cartPage : CartPage;
-    page : Page;
+export class POManager {
+  loginPage: LoginPage;
+  dashboardPage: DashboardPage;
+  ordersHistoryPage: OrdersHistoryPage;
+  ordersReviewPage: OrdersReviewPage;
+  cartPage: CartPage;
+  page: Page;
 
-
-constructor(page:Page)
-{
+  constructor(page: Page) {
     this.page = page;
     this.loginPage = new LoginPage(this.page);
     this.dashboardPage = new DashboardPage(this.page);
     this.ordersHistoryPage = new OrdersHistoryPage(this.page);
     this.ordersReviewPage = new OrdersReviewPage(this.page);
     this.cartPage = new CartPage(this.page);
+  }
 
-
-}
-
-getLoginPage()
-{
+  getLoginPage() {
     return this.loginPage;
-}
+  }
 
-getCartPage()
-{
+  getCartPage() {
     return this.cartPage;
-}
+  }
 
-getDashboardPage()
-{
+  getDashboardPage() {
     return this.dashboardPage;
-}
-getOrdersHistoryPage()
-{
-    return this.ordersHistoryPage;
-}
+  }
 
-getOrdersReviewPage()
-{
+  getOrdersHistoryPage() {
+    return this.ordersHistoryPage;
+  }
+
+  getOrdersReviewPage() {
     return this.ordersReviewPage;
+  }
 }
-}
-module.exports = {POManager};
