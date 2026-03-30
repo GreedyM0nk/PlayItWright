@@ -1,6 +1,10 @@
 import ExcelJs from 'exceljs';
-import { test, expect, Page } from '@playwright/test';
+import { test, expect, Page } from '../utils/fixtures';
 
+/**
+ * MODERNIZED: Upload/Download File Handling
+ * Tests Excel file manipulation and downloads
+ */
 interface Output {
   row: number;
   column: number;
@@ -17,8 +21,8 @@ async function writeExcelTest(searchText: string, replaceText: string, change: C
   const worksheet = workbook.getWorksheet('Sheet1');
   const output = await readExcel(worksheet, searchText);
 
-  const cell = worksheet.getCell(output.row, output.column + change.colChange);
-  cell.value = replaceText;
+  const cell = worksheet?.getCell(output.row, output.column + change.colChange);
+  if (cell) cell.value = replaceText;
   await workbook.xlsx.writeFile(filePath);
 }
 
@@ -40,7 +44,7 @@ async function readExcel(worksheet: ExcelJs.Worksheet | undefined, searchText: s
 test('Upload download excel validation', async ({ page }: { page: Page }) => {
   const textSearch = 'Mango';
   const updateValue = '350';
-  await page.goto("https://rahulshettyacademy.com/upload-download-test/index.html");
+  await page.goto("/upload-download-test/index.html");
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download' }).click();
   await downloadPromise;

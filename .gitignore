@@ -53,3 +53,10 @@ state.json
 .auth/
 test-data/
 .cache/
+
+# Test download artifacts
+downloads/
+*.zip
+*.pdf
+
+# docs/ is intentionally tracked — do not add it here

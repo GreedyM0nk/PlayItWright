@@ -1,20 +1,20 @@
-import { test, expect, Page } from "@playwright/test";
+import { test, expect } from '../utils/fixtures';
 
-test("Calendar validations", async ({ page }: { page: Page }) => {
+/**
+ * MODERNIZED: Calendar Test
+ * Updated to use new fixtures system and Web-First assertions
+ * Uses CalendarPage from PageObjectFactory for navigation and interaction
+ */
+test("@Calendar Calendar validations", async ({ pages: { calendarPage } }) => {
   const monthNumber = "6";
   const date = "15";
   const year = "2027";
   const expectedList = [monthNumber, date, year];
-  await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
-  await page.locator(".react-date-picker__inputGroup").click();
-  await page.locator(".react-calendar__navigation__label").click();
-  await page.locator(".react-calendar__navigation__label").click();
-  await page.getByText(year).click();
-  await page.locator(".react-calendar__year-view__months__month").nth(Number(monthNumber) - 1).click();
-  await page.locator("//abbr[text()='" + date + "']").click();
-  const inputs = await page.locator(".react-date-picker__inputGroup input");
-  for (let index = 0; index < inputs.length; index++) {
-    const value = await inputs[index].getAttribute("value");
-    expect(value).toEqual(expectedList[index]);
-  }
+
+  // Use CalendarPage from factory — goTo() uses relative path from baseURL
+  await calendarPage.goTo();
+  await calendarPage.selectDate(year, monthNumber, date);
+
+  const selected = await calendarPage.getSelectedDate();
+  expect([selected.month, selected.date, selected.year]).toEqual(expectedList);
 });

@@ -1,15 +1,18 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '../utils/fixtures';
 
-test('@QW Security test request intercept', async ({ page }: { page: Page }) => {
-  // login and reach orders page
-  await page.goto("https://rahulshettyacademy.com/client");
-  await page.locator("#userEmail").fill("anshika@gmail.com");
-  await page.locator("#userPassword").fill("Iamking@000");
-  await page.locator("[value='Login']").click();
-  await page.waitForLoadState('networkidle');
-  await page.locator(".card-body b").first().waitFor();
+/**
+ * MODERNIZED: Security Test - Request Interception
+ * Updated to use modern fixtures and Web-First assertions
+ * Uses PageObjectFactory (POManager) for loginPage and dashboardPage
+ */
+test('@QW Security test request intercept', async ({ page, pages: { loginPage, dashboardPage } }) => {
+  // Use LoginPage from the factory — goTo() uses relative path from baseURL
+  await loginPage.goTo();
+  await loginPage.validLogin("anshika@gmail.com", "Iamking@000");
 
-  await page.locator("button[routerlink*='myorders']").click();
+  // Use DashboardPage from the factory to navigate to orders
+  await dashboardPage.navigateToOrders();
+
   await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=*",
     route => route.continue({ url: 'https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=621661f884b053f6765465b6' }));
   await page.locator("button:has-text('View')").first().click();

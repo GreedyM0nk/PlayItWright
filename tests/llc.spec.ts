@@ -1,7 +1,11 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '../utils/fixtures';
 
-test('Playwright Special locators', async ({ page }: { page: Page }) => {
-  await page.goto("https://rahulshettyacademy.com/angularpractice/");
+/**
+ * MODERNIZED: Playwright Special Locators Test
+ * Demonstrates getByRole, getByLabel, getByPlaceholder, getByText patterns
+ */
+test('@llc Playwright Special locators', async ({ page }) => {
+  await page.goto("/angularpractice/");
   await page.getByLabel("Check me out if you Love IceCreams!").click();
   await page.getByLabel("Employed").check();
   await page.getByLabel("Gender").selectOption("Female");
