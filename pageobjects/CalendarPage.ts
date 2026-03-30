@@ -34,14 +34,23 @@ export class CalendarPage extends BasePage {
   }
 
   /**
+   * Navigate to the calendar offers page
+   * baseURL is configured in playwright.config.ts
+   */
+  async goTo(): Promise<void> {
+    await this.page.goto('/seleniumPractise/#/offers');
+  }
+
+  /**
    * Select date from calendar
    * Usage: await calendarPage.selectDate('2027', '6', '15')
    * 
    * Steps:
    * 1. Click calendar input to open picker
-   * 2. Navigate to correct year
-   * 3. Navigate to correct month
-   * 4. Click day button
+   * 2. Double-click label to reach decade/year view
+   * 3. Click the target year
+   * 4. Click the target month
+   * 5. Click the target day
    */
   async selectDate(year: string, month: string, day: string): Promise<void> {
     console.log(`📅 Selecting date: ${month}/${day}/${year}`);
@@ -50,14 +59,13 @@ export class CalendarPage extends BasePage {
     await this.calendarInput.click();
     console.log(`✅ Calendar opened`);
 
-    // Step 2: Navigate to year (click year label to get year view)
+    // Step 2: Two clicks on label — first gets to month view, second to decade/year view
     await this.monthYearLabel.click();
-    console.log(`✅ Year view opened`);
+    await this.monthYearLabel.click();
+    console.log(`✅ Decade/year view opened`);
 
     // Step 3: Click on target year
-    const yearButton = this.page.getByText(year);
-    await expect(yearButton).toBeVisible({ timeout: 5000 });
-    await yearButton.click();
+    await this.page.getByText(year).click();
     console.log(`✅ Year selected: ${year}`);
 
     // Step 4: Click month (in month view)
@@ -67,16 +75,9 @@ export class CalendarPage extends BasePage {
     await monthButton.click();
     console.log(`✅ Month selected: ${month}`);
 
-    // Step 5: Click day
-    const dayButton = this.page.locator(`abbr[text="${day}"]`);
-    await expect(dayButton).toBeVisible({ timeout: 5000 });
-    await dayButton.click();
+    // Step 5: Click day using XPath text-content match (CSS [text=] does not match text nodes)
+    await this.page.locator(`//abbr[text()='${day}']`).click();
     console.log(`✅ Day selected: ${day}`);
-
-    // Verify date was selected
-    await expect(this.calendarWidget).not.toBeVisible({ timeout: 2000 }).catch(() => {
-      console.warn(`⚠️ Calendar widget still visible after selection`);
-    });
   }
 
   /**

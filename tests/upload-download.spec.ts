@@ -44,7 +44,7 @@ async function readExcel(worksheet: ExcelJs.Worksheet | undefined, searchText: s
 test('Upload download excel validation', async ({ page }: { page: Page }) => {
   const textSearch = 'Mango';
   const updateValue = '350';
-  await page.goto("https://rahulshettyacademy.com/upload-download-test/index.html");
+  await page.goto("/upload-download-test/index.html");
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download' }).click();
   await downloadPromise;

@@ -9,7 +9,7 @@ test("@Web Popup validations", async ({
   page,
   pages: { popupPage, iframePage }
 }) => {
-  await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+  await page.goto("/AutomationPractice/");
 
   // Verify textbox is visible
   await expect(page.locator("#displayed-text")).toBeVisible();
@@ -30,7 +30,7 @@ test("@Web Popup validations", async ({
 });
 
 test("Screenshot & Visual comparison", async ({ page, pages: { basePage } }) => {
-  await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+  await page.goto("/AutomationPractice/");
   
   // Verify element visible
   await expect(page.locator("#displayed-text")).toBeVisible();
@@ -45,6 +45,6 @@ test("Screenshot & Visual comparison", async ({ page, pages: { basePage } }) => 
 });
 
 test('visual regression', async ({ page }) => {
-  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  await page.goto("/loginpagePractise/");
   expect(await page.screenshot()).toMatchSnapshot('landing.png');
 });

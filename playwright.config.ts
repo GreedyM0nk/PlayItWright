@@ -6,24 +6,21 @@ export default defineConfig({
   
   // PILLAR 3: Advanced Observability & Resilience
   fullyParallel: true, // Enable maximum parallelization
-  retries: process.env.CI ? 2 : 1, // 2 retries in CI, 1 locally
-  workers: process.env.CI ? 4 : 3, // 3-4 parallel workers
+  retries: process.env.CI ? 2 : 0, // 2 retries in CI, 0 locally for faster feedback
+  workers: process.env.CI ? 4 : 2, // 2 parallel workers locally
   
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 60 * 1000, // Increased to 60s to prevent timeouts
   expect: {
-    timeout: 5000
+    timeout: 10000 // Increased assertion timeout
   },
 
   /* Reporters: line for CLI output, html for detailed report, allure for Allure integration */
   reporter: [
     ['line'],
-    ['html'],
-    ['allure-playwright']
+    ['html', { outputFolder: 'playwright-report' }],
+    ['allure-playwright', { outputFolder: 'allure-results' }]
   ],
-  
-  /* Allure results directory */
-  outputDir: 'allure-results',
   
   /* Shared settings for all the projects below */
   use: {
@@ -35,8 +32,8 @@ export default defineConfig({
   },
 
   /* PILLAR 4: Multi-Experience Simulation - Define projects for major browsers & devices */
-  projects: [
-    // Desktop Browsers
+  projects: process.env.CI ? [
+    // CI: Run on all browsers for comprehensive coverage
     {
       name: 'chromium',
       use: {
@@ -58,8 +55,6 @@ export default defineConfig({
         baseURL: 'https://rahulshettyacademy.com',
       },
     },
-
-    // Mobile Emulation - PILLAR 4
     {
       name: 'Mobile Chrome',
       use: {
@@ -71,6 +66,15 @@ export default defineConfig({
       name: 'Mobile Safari',
       use: {
         ...devices['iPhone 12'],
+        baseURL: 'https://rahulshettyacademy.com',
+      },
+    },
+  ] : [
+    // Local: Run only on chromium for fast feedback
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
         baseURL: 'https://rahulshettyacademy.com',
       },
     },

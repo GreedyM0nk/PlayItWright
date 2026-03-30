@@ -13,7 +13,7 @@ test('@Web Browser controls - login validation', async ({ page }) => {
   page.on('request', (request) => console.log('Request: ' + request.url()));
   page.on('response', (response) => console.log('Response: ' + response.url() + ' ' + response.status()));
   
-  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  await page.goto("/loginpagePractise/");
   console.log("Page title: " + await page.title());
   
   // Invalid login attempt
@@ -37,7 +37,7 @@ test('@Web Browser controls - login validation', async ({ page }) => {
 });
 
 test('@Web UI controls - checkboxes and dropdowns', async ({ page }) => {
-  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  await page.goto("/loginpagePractise/");
   
   const documentLink = page.locator("[href*='documents-request']");
   const dropdown = page.locator("select.form-control");
@@ -69,7 +69,7 @@ test('@Web child windows handling', async ({ browser }) => {
   const page = await context.newPage();
   const userName = page.locator('#username');
   
-  await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  await page.goto("/loginpagePractise/");
   const documentLink = page.locator("[href*='documents-request']");
 
   // Handle new window/tab

@@ -49,7 +49,7 @@ test('@SP Place the order with mocked API', async ({ page, pages: { apiPage } })
     window.localStorage.setItem('token', value);
   }, response.token);
   
-  await page.goto("https://rahulshettyacademy.com/client");
+  await page.goto("/client");
 
   // Mock the orders API endpoint
   await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",

@@ -12,7 +12,7 @@
  * 5. Comprehensive logging
  */
 
-import { test, expect } from '../utils/fixtures-enhanced';
+import { test, expect } from '../utils/fixtures';
 
 /**
  * ============================================================
@@ -129,13 +129,13 @@ import { test, expect } from '../utils/fixtures-enhanced';
  * - pages: Page Objects (dashboardPage, cartPage, etc.)
  * - testData: Test credentials and product names
  */
-test('@QA authenticated session - complete checkout flow', async ({
+test('@QA Engineered - authenticated session complete checkout flow', async ({
   authenticatedPage: page,
   pages: { dashboardPage, cartPage, ordersReviewPage, ordersHistoryPage },
   testData
 }) => {
   console.log(`\n${'='.repeat(70)}`);
-  console.log(`📌 TEST: Complete Checkout Flow`);
+  console.log(`📌 TEST: Complete Checkout Flow (Engineered)`);
   console.log(`🔐 Using authenticated session`);
   console.log(`${'='.repeat(70)}\n`);
 

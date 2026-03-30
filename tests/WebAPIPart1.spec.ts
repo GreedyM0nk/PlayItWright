@@ -43,7 +43,7 @@ test('@API Place the order', async ({ page }: { page: Page }) => {
     window.localStorage.setItem('token', value);
   }, response.token);
   
-  await page.goto("https://rahulshettyacademy.com/client");
+  await page.goto("/client");
   await page.locator("button[routerlink*='myorders']").click();
   // PILLAR 2: Web-First assertion instead of waitFor()
   await expect(page.locator("tbody")).toBeVisible({ timeout: 5000 });

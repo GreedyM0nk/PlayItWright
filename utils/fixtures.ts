@@ -99,8 +99,8 @@ const authenticatedPageFixture = async ({ browser }: any, use: any) => {
   const page = await context.newPage();
   
   console.log('[AUTH FIXTURE] Navigating to login page');
-  // Step 2: Navigate to login
-  await page.goto('https://rahulshettyacademy.com/client');
+  // Step 2: Navigate to login — baseURL is set in playwright.config.ts
+  await page.goto('/client');
   
   console.log('[AUTH FIXTURE] Entering credentials');
   // Step 3: Enter credentials

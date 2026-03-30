@@ -126,9 +126,8 @@ await expect(button).toBeVisible({ timeout: 5000 });
 - ✅ **Responsive Design** - Mobile + desktop coverage
 
 **Documentation:**
-- 📖 [MODERNIZATION_GUIDE.md](docs/MODERNIZATION_GUIDE.md) - Complete technical details
-- 📖 [QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) - Developer patterns & cheat sheets
-- 📖 [MODERNIZATION_SUMMARY.md](docs/MODERNIZATION_SUMMARY.md) - Implementation roadmap
+- 📖 [MODERNIZATION_GUIDE.md](docs/MODERNIZATION_GUIDE.md) — Technical reference for all 4 Pillars
+- 📖 [QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) — Developer cheat-sheet & fixture patterns
 
 ---
 
@@ -142,14 +141,11 @@ PlayItWright/
 │       └── playwright_test_report.yml   # Alternative workflow
 │
 ├── docs/                                # 📚 Documentation
-│   ├── MODERNIZATION_GUIDE.md           # Complete modernization details ⭐ NEW
-│   ├── QUICK_REFERENCE.md               # Developer cheat sheet ⭐ NEW
-│   ├── MODERNIZATION_SUMMARY.md         # Implementation roadmap ⭐ NEW
-│   ├── MIGRATION_SUMMARY.md             # TypeScript migration history
-│   ├── ALLURE_SETUP.md
-│   ├── TESTING_GUIDE.md
-│   ├── SETUP_SUMMARY.md
-│   └── TROUBLESHOOTING.md
+│   ├── ALLURE_SETUP.md                  # Allure & CI/CD integration
+│   ├── MODERNIZATION_GUIDE.md           # 4-Pillar technical reference
+│   ├── QUICK_REFERENCE.md               # Developer cheat-sheet
+│   ├── TESTING_GUIDE.md                 # TypeScript testing patterns
+│   └── TROUBLESHOOTING.md               # Common issues & solutions
 │
 ├── tests/                               # 📝 Test Specifications
 │   ├── ClientAppPO-Modern.spec.ts       # ⭐ Modern pattern example
@@ -173,10 +169,11 @@ PlayItWright/
 │   ├── OrdersReviewPage.ts              # ⭐ Modern patterns
 │   └── POManager.ts                     # Centralized POM access
 │
-├── utils/                               # 🔧 Utilities & Fixtures (Modernized ⭐)
-│   ├── fixtures.ts                      # ⭐ NEW - Robust fixture architecture
+├── utils/                               # 🔧 Utilities & Fixtures
+│   ├── fixtures.ts                      # Custom fixtures (pages, authenticatedPage, testData)
+│   ├── pageObjectFactory.ts             # PageObjectFactory — lazy-load POM cache
 │   ├── APiUtils.ts                      # API helper class
-│   ├── test-base.ts                     # Legacy fixtures (kept for compatibility)
+│   ├── test-base.ts                     # Legacy fixture (backward-compat)
 │   └── placeorderTestData.json          # Test data
 │
 ├── allure-results/                      # Generated test data
@@ -485,15 +482,13 @@ test('Create order via API', async ({ request }) => {
 
 ---
 
-## 📚 Migration Guide
+## 📚 Architecture Reference
 
-### Upgrading Old Tests to Modern Architecture
-
-Visit [docs/QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) for:
-- Step-by-step migration patterns
-- Before/after code examples
-- Refactoring templates
-- Complete checklists
+See [docs/QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) for:
+- Fixture usage patterns (`pages`, `authenticatedPage`, `poManager`)
+- Selector priority guide
+- Web-First assertion patterns
+- NPM script reference
 
 **Quick Example:**
 
@@ -553,25 +548,19 @@ https://<username>.github.io/<repo-name>/
 ### Basic Test Structure
 
 ```typescript
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '../utils/fixtures';
 
-test('Complete purchase flow', async ({ page }: { page: Page }) => {
-  // Arrange
-  const testData = {
-    username: "test@example.com",
-    password: "password123",
-    product: "Laptop"
-  };
-
+test('complete purchase flow', async ({
+  authenticatedPage: page,
+  pages: { dashboardPage },
+  testData
+}) => {
   // Act
-  await page.goto('https://example.com');
-  await page.locator('#email').fill(testData.username);
-  await page.locator('#password').fill(testData.password);
-  await page.click('button:has-text("Login")');
+  await dashboardPage.searchProductAddCart(testData.productName);
+  await dashboardPage.navigateToCart();
 
   // Assert
-  await expect(page.locator('.welcome-msg')).toBeVisible();
-  console.log('Test passed!');
+  await expect(page).toHaveURL(/\/cart/);
 });
 ```
 
@@ -668,12 +657,12 @@ await page.waitForFunction(() => document.readyState === 'complete');
 
 ## 📚 Documentation
 
-- **[Allure Setup Guide](./docs/ALLURE_SETUP.md)** - Comprehensive Allure integration guide
-- **[Testing Guide](./docs/TESTING_GUIDE.md)** - Best practices and testing patterns
-- **[Setup Summary](./docs/SETUP_SUMMARY.md)** - Installation and configuration walkthrough
-- **[Troubleshooting](./docs/TROUBLESHOOTING.md)** - Common issues and solutions
-- **[Playwright Docs](https://playwright.dev/)** - Official Playwright documentation
-- **[Allure Docs](https://docs.qameta.io/allure/)** - Allure reporting documentation
+- **[Testing Guide](./docs/TESTING_GUIDE.md)** — Full TypeScript patterns and best practices
+- **[Quick Reference](./docs/QUICK_REFERENCE.md)** — Developer cheat-sheet
+- **[Modernization Guide](./docs/MODERNIZATION_GUIDE.md)** — 4-Pillar technical reference
+- **[Allure Setup Guide](./docs/ALLURE_SETUP.md)** — Allure & CI/CD integration
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)** — Common issues and solutions
+- **[Playwright Docs](https://playwright.dev/)** — Official Playwright documentation
 
 ---
 
